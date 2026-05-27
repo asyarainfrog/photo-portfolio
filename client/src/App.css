@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Manrope:wght@300;400;500&display=swap');
+
+body {
+  margin: 0;
+  background: #0d0d0d;
+  color: #f3e7d3;
+  font-family: 'Manrope', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 100%;
+}
+
+/* HERO */
+
+header {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url('/images/photo1.jpg');
+
+  background-size: cover;
+  background-position: center;
+
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: clamp(70px, 10vw, 170px);
+
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+
+  letter-spacing: -2px;
+
+  color: #f3e7d3;
+
+  margin: 0;
+  line-height: 0.9;
+}
+
+header p {
+  font-size: 18px;
+
+  letter-spacing: 6px;
+  text-transform: uppercase;
+
+  color: rgba(243,231,211,0.75);
+
+  margin: 0;
+}
+
+header span {
+  font-size: 16px;
+  color: rgba(243,231,211,0.88);
+  letter-spacing: 2px;
+}
+
+/* GALLERY */
+
+.gallery {
+  columns: 3;
+  column-gap: 24px;
+
+  padding: 80px;
+}
+
+.gallery img {
+  width: 100%;
+  margin-bottom: 24px;
+
+  aspect-ratio: 3 / 4;
+
+  object-fit: cover;
+
+  border-radius: 18px;
+  transition: 0.4s ease;
+  cursor: pointer;
+
+  display: block;
+  break-inside: avoid;
+}
+
+.gallery img:hover {
+  transform: scale(1.02);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 0 30px rgba(243,231,211,0.08),
+    0 0 80px rgba(243,231,211,0.05);
+
+}
+
+/* MODAL */
+
+.modal {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,0.92);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 999;
+
+  backdrop-filter: blur(4px);
+}
+
+.modal-image {
+  max-width: 90%;
+  max-height: 90%;
+
+  border-radius: 18px;
+}
+
+/* ABOUT PHOTOGRAPHER */
+
+.about-photographer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 60px;
+
+  padding: 40px 80px 120px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 82px;
+  margin-bottom: 30px;
+  line-height: 0.9;
+}
+
+.about-text p {
+  text-align: left;
+  font-size: 24px;
+  line-height: 1.8;
+  color: #cfcfcf;
+
+  max-width: 700px;
+}
+
+.about-images {
+  display: flex;
+  gap: 20px;
+
+  align-items: flex-end;
+}
+
+.about-images img {
+  width: 300px;
+  height: 420px;
+
+  object-fit: cover;
+
+  border-radius: 20px;
+
+  transition: 0.3s ease;
+}
+
+.about-images img:hover {
+  transform: scale(1.02);
+}
+
+/* GENERAL */
+
+h2 {
+  text-align: center;
+
+  font-size: 52px;
+
+  margin-top: 100px;
+
+  font-family: 'Cormorant Garamond', serif;
+}
+
+p {
+  text-align: center;
+
+  max-width: 700px;
+
+  margin: auto;
+
+  line-height: 1.8;
+
+  color: #cfcfcf;
+
+  font-size: 18px;
+}
+
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+
+  padding: 30px;
+
+  color: #777;
+
+  border-top: 1px solid #1f1f1f;
+}
+
+.contact-section {
+  text-align: center;
+
+  padding: 80px 20px 140px;
+}
+
+.contact-section h2 {
+  font-size: 72px;
+  margin-bottom: 40px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: #f3e7d3;
+  text-decoration: none;
+
+  border: 1px solid #2c2c2c;
+
+  padding: 16px 28px;
+
+  border-radius: 999px;
+
+  transition: 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #f3e7d3;
+  color: black;
+}
+
+.email-text {
+  margin-top: 30px;
+
+  font-size: 18px;
+  letter-spacing: 1px;
+
+  color: #8f8f8f;
+}
+
+.gallery img,
+.about-photographer,
+.socials-section,
+header {
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+
+  header {
+    padding: 40px 20px;
+    height: 85vh;
+  }
+
+  header h1 {
+    font-size: 72px;
+  }
+
+  header p {
+    font-size: 14px;
+    letter-spacing: 3px;
+  }
+
+  .gallery {
+    columns: 1;
+    padding: 20px;
+  }
+
+  .about-photographer {
+    flex-direction: column;
+    padding: 60px 24px;
+    gap: 40px;
+  }
+
+  .about-text h2 {
+    font-size: 64px;
+    line-height: 0.9;
+  }
+
+  .about-text p {
+    font-size: 17px;
+  }
+
+  .about-images {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .about-images img {
+    width: 42%;
+    height: auto;
+  }
+
+  .socials-section {
+    padding: 60px 20px;
+  }
+
+  .socials-section h2 {
+    font-size: 52px;
+  }
+
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
