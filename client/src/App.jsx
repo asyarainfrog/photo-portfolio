@@ -37,6 +37,8 @@ function App() {
 
   <h2>Contacts</h2>
 
+  <ContactForm />
+
   <div className="social-links">
 
     <a
