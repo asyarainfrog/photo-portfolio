@@ -117,3 +117,20 @@ export default function ContactForm() {
     </form>
   );
 }
+
+const loadDates = async () => {
+  const { data, error } = await supabase
+    .from("available_dates")
+    .select("*")
+    .order("date");
+
+  console.log("DATA:", data);
+  console.log("ERROR:", error);
+
+  if (error) {
+    console.error(error);
+    return;
+  }
+
+  setAvailableDates(data);
+};
