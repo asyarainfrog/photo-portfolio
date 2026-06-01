@@ -451,3 +451,56 @@ header {
 .gallery {
   scroll-behavior: smooth;
 }
+@media (max-width: 768px) {
+
+  .gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+
+    scroll-snap-type: x mandatory;
+
+    padding: 0 20px 20px;
+  }
+
+  .gallery img {
+    flex: 0 0 80vw;
+
+    height: 350px;
+
+    scroll-snap-align: center;
+  }
+
+   .about-photographer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-images {
+    justify-content: center;
+  }
+
+  .booking-form,
+  form {
+    width: 100%;
+  }
+
+  .booking-form input,
+  .booking-form textarea,
+  .booking-form select,
+  form input,
+  form textarea,
+  form select {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+}
+.booking-form select {
+  color: #f5eee6;
+}
+
+.booking-form option {
+  background: #1a1a1a;
+  color: white;
+}
