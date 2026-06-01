@@ -16,10 +16,23 @@ export default function ContactForm() {
   }, []);
 
   const loadDates = async () => {
+    console.log(
+      "SUPABASE URL:",
+      import.meta.env.VITE_SUPABASE_URL
+    );
+
+    console.log(
+      "SUPABASE KEY:",
+      import.meta.env.VITE_SUPABASE_ANON_KEY
+    );
+
     const { data, error } = await supabase
       .from("available_dates")
       .select("*")
       .order("date");
+
+    console.log("DATES:", data);
+    console.log("ERROR:", error);
 
     if (error) {
       console.error(error);
@@ -117,20 +130,3 @@ export default function ContactForm() {
     </form>
   );
 }
-
-const loadDates = async () => {
-  const { data, error } = await supabase
-    .from("available_dates")
-    .select("*")
-    .order("date");
-
-  console.log("DATA:", data);
-  console.log("ERROR:", error);
-
-  if (error) {
-    console.error(error);
-    return;
-  }
-
-  setAvailableDates(data);
-};
